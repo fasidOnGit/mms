@@ -1,7 +1,8 @@
 import  React , { Component } from 'react';
 import Header from './common/Header';
 import Sidebar from'./common/Sidebar';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import routes from '../routes';
 
 
 class App extends Component{
@@ -28,7 +29,7 @@ class App extends Component{
       {
         id:4,
         name:'Manage Credit',
-        route:'credit'
+        route:'/credit'
       }];
   }
 
@@ -37,11 +38,14 @@ class App extends Component{
       <div id="mms-app">
         <Sidebar sidebar={this.sidebar}/>
         <Header />
+        {this.props.children}
       </div>
     );
   }
 }
-
+App.propTypes ={
+  children : PropTypes.object.isRequired
+};
 export default App;
 
 

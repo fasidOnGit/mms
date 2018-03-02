@@ -5,6 +5,9 @@
   max-width: 850px;
   margin: 0; }
 
+.inlineBlock {
+  display: inline-block; }
+
 a.active {
   color: orange; }
 
@@ -48,7 +51,7 @@ a.active {
   color: orange;
   background: #6d7fcc; }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
+#sidebar ul li > a.active, a[aria-expanded="true"] {
   color: beige;
   background: #6d7fcc; }
 
@@ -59,6 +62,10 @@ ul ul a {
 
 .header {
   padding: 10px; }
+
+.flex-card {
+  display: flex;
+  justify-content: flex-start; }
 
 @media (max-width: 768px) {
   #sidebar {

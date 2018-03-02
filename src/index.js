@@ -1,15 +1,33 @@
 import 'babel-polyfill';
 import React from 'react';
-import ReactDom from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { render } from 'react-dom';
+import { Router , browserHistory } from 'react-router';
+import { BrowserRouter , Switch} from 'react-router-dom';
+import * as firebase from 'firebase';
+
+import routes from './routes';
 import App from './components/App';
-import Sidebar from './components/common/Sidebar';
 import './sass/styles.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
-ReactDom.render((
+// Initialize Firebase
+let config = {
+  apiKey: "AIzaSyB3NW_91hOjWICKFGHElSXrxdgvspKCBNI",
+  authDomain: "mms-db-5ae10.firebaseapp.com",
+  databaseURL: "https://mms-db-5ae10.firebaseio.com",
+  projectId: "mms-db-5ae10",
+  storageBucket: "mms-db-5ae10.appspot.com",
+  messagingSenderId: "703342301090"
+};
+firebase.initializeApp(config);
+
+render(
   <BrowserRouter>
-    <App />
+    <App>
+      {/* <Switch> */}
+        {routes} 
+      {/* </Switch> */}
+    </App>
   </BrowserRouter>
-), document.getElementById('app'));
+, document.getElementById('app'));
