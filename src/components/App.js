@@ -3,12 +3,13 @@ import Header from './common/Header';
 import Sidebar from'./common/Sidebar';
 import PropTypes from 'prop-types';
 import routes from '../routes';
-
+import fb from '../firebase/firebase.index';
 
 class App extends Component{
   constructor(props , context){
     super(props , context);
       this.state={
+        uid:null
       };
       this.sidebar=[{
         id:1,
@@ -31,6 +32,10 @@ class App extends Component{
         name:'Manage Credit',
         route:'/credit'
       }];
+  }
+
+  componentDidMount(){
+    
   }
 
   render(){

@@ -95,3 +95,12 @@ ul ul a{
     margin-left:0;
   }
 }
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.label-text{
+  font-size: 1.3em;
+}
