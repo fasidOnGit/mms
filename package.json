@@ -17,7 +17,9 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
+    "ejs": "^2.5.7",
     "eslint-config-airbnb": "^16.1.0",
     "firebase": "^4.10.1",
     "jquery": "^3.3.1",

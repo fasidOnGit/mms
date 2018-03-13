@@ -6,15 +6,15 @@ import Dashboard from './components/Dashboard';
 import Customer from './components/customer/Customer';
 import AddCustomer from './components/customer/AddCustomer';
 import Login from './components/login/Login';
-
+const bool = false;
 
 export default (
   <div>
-    {/* <IndexRoute component={App}/> */}
-    <Route path="/login" component={Login}/>
-    <Route path="/home" component={Dashboard}/>
+    {/* <IndexRoute component={Dashboard}/> */}
+    <Route strict exact path="/home" component={Dashboard}/>
     <Route path="/manage" component={Customer}/>
     <Route path="/add" component={AddCustomer}/>
-    <Redirect from="/" to="/login"/>
+    <Redirect from="/" to="/home"/>
+
   </div>
 );

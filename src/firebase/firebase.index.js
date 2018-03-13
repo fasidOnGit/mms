@@ -9,19 +9,24 @@ let config = {
     storageBucket: "mms-db-5ae10.appspot.com",
     messagingSenderId: "703342301090"
   };
-  let firebaseObject ={};
+//   let firebaseObject ={};
   
-  const firebaseApp = firebase.initializeApp(config);
+//   const firebaseApp = firebase.initializeApp(config);
   
-  firebaseObject.db = firebaseApp.database();
+//   firebaseObject.db = firebaseApp.database();
   
-  firebaseObject.auth = firebaseApp.auth();
+//   firebaseObject.auth = firebaseApp.auth();
 
-  firebaseObject.storageKey ="";
+//   firebaseObject.storageKey ="";
 
-  firebaseObject.isAuthenticated = () =>{
-      return !!this.auth.currentUser || !!localStorage.getItem(this.storageKey);
-  };
+//   firebaseObject.isAuthenticated = () =>{
+//       return !!this.auth.currentUser || !!localStorage.getItem(this.storageKey);
+//   };
 
 
-  export default firebaseObject;
+//   export default firebaseObject;
+firebase.initializeApp(config);
+
+export const provider = new firebase.auth.GoogleAuthProvider();
+export const auth = firebase.auth();
+export default firebase;

@@ -3,13 +3,13 @@ import Header from './common/Header';
 import Sidebar from'./common/Sidebar';
 import PropTypes from 'prop-types';
 import routes from '../routes';
-import fb from '../firebase/firebase.index';
+import firebase, { auth, provider } from '../firebase/firebase.index';
 
 class App extends Component{
   constructor(props , context){
     super(props , context);
       this.state={
-        uid:null
+        user:null
       };
       this.sidebar=[{
         id:1,
@@ -32,24 +32,27 @@ class App extends Component{
         name:'Manage Credit',
         route:'/credit'
       }];
+
   }
 
   componentDidMount(){
-    
   }
+  
 
   render(){
     return (
       <div id="mms-app">
         <Sidebar sidebar={this.sidebar}/>
-        <Header />
+        <Header logout = {this.props.logout}/>
         {this.props.children}
       </div>
     );
   }
 }
 App.propTypes ={
-  children : PropTypes.object.isRequired
+  children : PropTypes.object.isRequired,
+  isAuthed: PropTypes.bool.isRequired,
+  logout:PropTypes.func.isRequired
 };
 export default App;
 

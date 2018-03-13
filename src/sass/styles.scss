@@ -1,10 +1,20 @@
 $sidebar-anchor:#fff;
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 #app{
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  min-width: 550px;
-  max-width: 850px;
+  min-width: 100%;
   margin: 0;
+}
+
+#mms-app{
+  min-width: 100%;
+  width: 100%
 }
 
 .inlineBlock{
@@ -103,4 +113,24 @@ ul ul a{
 
 .label-text{
   font-size: 1.3em;
+}
+
+.login-wrapper{
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-wrapper button {
+  align-self: center;
+  box-sizing: border-box;
+}
+.user-profile img{
+  height:50px;
+  width:50px;
+  border-radius: 50%;
+}
+
+.log-button-div{
+  margin: auto;
 }
